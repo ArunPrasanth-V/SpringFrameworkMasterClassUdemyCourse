@@ -12,9 +12,11 @@ public class MainClass {
 	public static void main(String [] args)
 	{
 		
-		AbstractApplicationContext context=new AnnotationConfigApplicationContext(MainClass.class);
+		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext(MainClass.class);
 		SubClass subClass=context.getBean(SubClass.class);
 		subClass.hello();
+		
+		context.close();
 	}
 
 }
